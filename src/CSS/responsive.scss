@@ -1,0 +1,72 @@
+@media (min-width: 481px) {
+    .container-light {
+        background-image: url('../Images/bg-desktop-light.jpg');
+    }
+
+    .container-dark {
+        background-image: url('../Images/bg-desktop-dark.jpg');
+    }
+
+    form {
+        padding: 20px 24px;
+
+        label {
+            margin-right: 24px;
+
+        }
+
+        input {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 18px;
+            letter-spacing: -0.25px;
+        }
+    }
+
+    .todo {
+        font-size: 18px;
+    }
+
+    .todo-light {
+        .mark {
+            &:hover {
+                border: none;
+                background:
+                    linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255)) padding-box,
+                    linear-gradient(135deg, #55DDFF 0%, #C058F3 100%) border-box;
+                border-radius: 50em;
+                border: 1px solid transparent;
+            }
+        }
+    }
+
+    .todo-dark {
+        .mark {
+            &:hover {
+                border: none;
+                background:
+                    linear-gradient(#25273D, #25273D) padding-box,
+                    linear-gradient(135deg, #55DDFF 0%, #C058F3 100%) border-box;
+                border-radius: 50em;
+                border: 1px solid transparent;
+            }
+        }
+    }
+
+
+
+    .filterMobile {
+        display: none;
+    }
+
+    .filterDesktop {
+        display: flex;
+    }
+
+    .footerMobile .left {
+        font-size: 15px;
+    }
+    .filters p{
+        font-size: 15px;
+    }
+}
