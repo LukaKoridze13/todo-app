@@ -26,7 +26,7 @@ export default function SingleTodo(props) {
     }
   })
   return (
-    <div className={`todo todo-${theme.theme}`} draggable onDragStart={props.onDragStart} onDragEnter={props.onDragEnter} onDragEnd={props.onDragEnd}>
+    <div className={`todo todo-${theme.theme}`} draggable onDragStart={props.onDragStart} onDragEnter={props.onDragEnter} onDragEnd={props.onDragEnd} onTouchStart={props.onTouchStart} onTouchMove={props.onTouchMove} onTouchEnd={props.onTouchEnd}>
       <div>
         <div className="mark" ref={marker} onClick={mark}></div>
         <p ref={text}>{props.todo}</p>

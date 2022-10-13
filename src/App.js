@@ -30,7 +30,7 @@ function App() {
       }
       setLeft(c)
     })
-
+    setRenew(!renew)
   }
   function clearComplited() {
     let x = todos.filter((item) => {
@@ -65,6 +65,9 @@ function App() {
       }
       setLeft(c)
     })
+    if(todos.length===0){
+      setLeft(0)
+    }
   })
   return (
     <Theme.Provider value={{ theme, setTheme, removeTodo, todos,setTodos, changeStatus, left, clearComplited, filter, setFilter }}>

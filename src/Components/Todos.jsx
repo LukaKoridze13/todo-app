@@ -9,9 +9,11 @@ export default function Todos(props) {
   const dragOverItem = useRef();
   const dragStart = (e, position) => {
     dragItem.current = position;
+    console.log('start')
   };
   const dragEnter = (e, position) => {
     dragOverItem.current = position;
+    console.log('move')
   };
   const drop = (e) => {
     const todosCopy = [...theme.todos];
@@ -21,6 +23,7 @@ export default function Todos(props) {
     dragItem.current = null;
     dragOverItem.current = null;
     theme.setTodos(todosCopy)
+    console.log('end')
   };
   return (
     <main className={`main-${theme.theme}`} >
@@ -28,14 +31,22 @@ export default function Todos(props) {
         if (theme.filter === 'All') {
           return <SingleTodo todo={todo.text} status={todo.status} key={todo.text} change={change} setChange={setChange} onDragStart={(e) => dragStart(e, index)}
             onDragEnter={(e) => dragEnter(e, index)}
-            onDragEnd={drop} />
+            onDragEnd={drop}
+            onTouchStart={(e) => dragStart(e, index)}
+            onTouchMove={(e) => dragEnter(e, index)}
+            onTouchEnd={drop} 
+          />
         } else if (theme.filter === 'Activate') {
           if (todo.status === 'active') {
-            return <SingleTodo todo={todo.text} status={todo.status} key={todo.text} change={change} setChange={setChange} onDragStart={(e) => dragStart(e, index)} onDragEnter={(e) => dragEnter(e, index)} onDragEnd={drop} />
+            return <SingleTodo todo={todo.text} status={todo.status} key={todo.text} change={change} setChange={setChange} onDragStart={(e) => dragStart(e, index)} onDragEnter={(e) => dragEnter(e, index)} onDragEnd={drop} onTouchStart={(e) => dragStart(e, index)}
+              onTouchMove={(e) => dragEnter(e, index)}
+              onTouchEnd={drop} />
           }
         } else {
           if (todo.status === 'done') {
-            return <SingleTodo todo={todo.text} status={todo.status} key={todo.text} change={change} setChange={setChange} onDragStart={(e) => dragStart(e, index)} onDragEnter={(e) => dragEnter(e, index)} onDragEnd={drop} />
+            return <SingleTodo todo={todo.text} status={todo.status} key={todo.text} change={change} setChange={setChange} onDragStart={(e) => dragStart(e, index)} onDragEnter={(e) => dragEnter(e, index)} onDragEnd={drop} onTouchStart={(e) => dragStart(e, index)}
+              onTouchMove={(e) => dragEnter(e, index)}
+              onTouchEnd={drop} />
           }
         }
       })}
