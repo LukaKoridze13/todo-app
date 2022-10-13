@@ -44,4 +44,7 @@
   .filters p {
     font-size: 15px;
   }
+  .dnd {
+    display: block;
+  }
 }/*# sourceMappingURL=responsive.css.map */

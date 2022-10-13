@@ -245,6 +245,7 @@ main {
   text-align: center;
   letter-spacing: -0.194444px;
   margin-top: 50px;
+  display: none;
 }
 
 .dnd-light {

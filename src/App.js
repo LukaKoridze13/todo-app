@@ -65,12 +65,12 @@ function App() {
       }
       setLeft(c)
     })
-    if(todos.length===0){
+    if (todos.length === 0) {
       setLeft(0)
     }
   })
   return (
-    <Theme.Provider value={{ theme, setTheme, removeTodo, todos,setTodos, changeStatus, left, clearComplited, filter, setFilter }}>
+    <Theme.Provider value={{ theme, setTheme, removeTodo, todos, setTodos, changeStatus, left, clearComplited, filter, setFilter }}>
       <div className={`container container-${theme}`}>
         <Header />
         <NewRole todos={todos} setTodos={setTodos} setRenew={setRenew} renew={renew} />
